@@ -27,7 +27,7 @@ console.log("isLoggedIn" , isLoggedIn)
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/auth/userdata", {
+        const res = await fetch("https://virtual-assistant-nu.vercel.app/api/auth/userdata", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -49,7 +49,7 @@ console.log("isLoggedIn" , isLoggedIn)
 
   const checkAuthStatus = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/userdata", {
+      const res = await fetch("https://virtual-assistant-nu.vercel.app/api/auth/userdata", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -68,7 +68,7 @@ console.log("isLoggedIn" , isLoggedIn)
 
   // Register User
   const register = async (userData) => {
-    const res = await fetch("http://localhost:5000/api/auth/register", {
+    const res = await fetch("https://virtual-assistant-nu.vercel.app/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
@@ -79,14 +79,14 @@ console.log("isLoggedIn" , isLoggedIn)
   // Verify Email
   const verifyEmail = async (token) => {
     const res = await fetch(
-      `http://localhost:5000/api/auth/verifyEmail?token=${token}`
+      `https://virtual-assistant-nu.vercel.app/api/auth/verifyEmail?token=${token}`
     );
     return res.json();
   };
 
   // Login User
   const login = async (credentials) => {
-    const res = await fetch("http://localhost:5000/api/auth/login", {
+    const res = await fetch("https://virtual-assistant-nu.vercel.app/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
@@ -170,7 +170,7 @@ console.log("isLoggedIn" , isLoggedIn)
 
   // Forgot Password
   const forgotPassword = async (email) => {
-    const res = await fetch("http://localhost:5000/api/auth/forgotPassword", {
+    const res = await fetch("https://virtual-assistant-nu.vercel.app/api/auth/forgotPassword", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -181,7 +181,7 @@ console.log("isLoggedIn" , isLoggedIn)
   // Reset Password
   const resetPassword = async (resetToken, newPassword) => {
     const res = await fetch(
-      `http://localhost:5000/api/auth/resetPassword/${resetToken}`,
+      `https://virtual-assistant-nu.vercel.app/api/auth/resetPassword/${resetToken}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -193,7 +193,7 @@ console.log("isLoggedIn" , isLoggedIn)
 
   // Google Authentication
   const googleAuth = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href = "https://virtual-assistant-nu.vercel.app/api/auth/google";
   };
 
   return (

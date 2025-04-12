@@ -34,7 +34,7 @@ const registerUser = async (req, res) => {
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
 
-    await sendEmail(user.email, "Verify Your Email", `Click to verify: http://localhost:5173/verifyEmail?token=${token}`);
+    await sendEmail(user.email, "Verify Your Email", `Click to verify: https://virtual-assistant-o3hq.vercel.app/verifyEmail?token=${token}`);
 
     res.status(201).json({ message: "User registered. Check email for verification.", success: true , token:`${token}`  });
   } catch (error) {

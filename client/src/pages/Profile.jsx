@@ -7,7 +7,7 @@ export const Profile = () => {
 
   const checkAuthStatus = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/userdata", {
+      const res = await fetch("https://virtual-assistant-nu.vercel.app/api/auth/userdata", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

@@ -19,7 +19,7 @@ export const Home = () => {
 
   const checkAuthStatus = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/userdata", {
+      const res = await fetch("https://virtual-assistant-nu.vercel.app/api/auth/userdata", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -136,7 +136,7 @@ export const Home = () => {
     
     try {
       stopListening();
-      const response = await fetch("http://localhost:5000/api/command/getResponse", {
+      const response = await fetch("https://virtual-assistant-nu.vercel.app/api/command/getResponse", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
