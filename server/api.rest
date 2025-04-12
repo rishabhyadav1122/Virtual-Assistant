@@ -1,0 +1,68 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWZkZDU1ODYyYWI4YjZhMjZmMGY3MSIsImlhdCI6MTc0Mzc3MzAyNCwiZXhwIjoxNzQ2MzY1MDI0fQ.RZ8eLtBdSJuBJELzIg2KBy7CgWgCa1UKM4GCjCjpPY4
+@reset_token = 3f55c4861049ed97109e7a027dae9039379181ca6098d12e0661271989059c7d
+### Register User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Rishabh Yadav",
+  "email": "yrishabh325@gmail.com",
+  "password": "rishabh123"
+}
+
+### Verify Email
+GET http://localhost:5000/api/auth/verifyEmail?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjUzZjcwYmE3ZWJlYzY1NTM3ZWFhMSIsImlhdCI6MTc0NDEyNTgwOSwiZXhwIjoxNzQ0MjEyMjA5fQ.OV9Jcs78m9GJg5ohJOy6sUv77y9mB0-MCxHqr7ry0dY
+
+
+### Login User
+POST  http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "yrishabh325@gmail.com",
+  "password": "rishabh123"
+}
+
+### Google Authentication (Redirect to Google Login)
+GET http://localhost:5000/api/auth/google
+
+### Google Authentication Callback
+GET http://localhost:5000/api/auth/google/callback
+
+### Logout User
+GET http://localhost:5000/api/auth/logout
+
+
+### Forgot Password (Request Reset Link)
+POST http://localhost:5000/api/auth/forgotPassword
+Content-Type: application/json
+
+{
+  "email": "yrishabh325@gmail.com"
+}
+
+
+### Reset Password (Submit New Password)
+POST http://localhost:5000/api/auth/resetPassword/{{reset_token}}
+Content-Type: application/json
+
+{
+  "newPassword": "yadav123"
+}
+
+
+### Check Google Authentication Status (After login)
+GET http://localhost:5000/api/auth/status
+
+### Protected Route Example (Replace with actual protected routes later)
+GET http://localhost:5000/api/protected
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:5000/api/command/getResponse
+Content-Type: application/json
+
+{ 
+  "commandText": "What is computer"
+}
+
