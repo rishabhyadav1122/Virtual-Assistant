@@ -75,13 +75,20 @@ export const Navbar = () => {
               </Link>
             </li>
             {isLoggedIn ? (
-              <li>
-               <Link to="/profile" className="hover:text-green-400 flex items-center gap-2">
-  <UserCircle className="w-5 h-5" />
-  <span className="hidden sm:inline">Profile</span>
-</Link>
-
-              </li>
+               <>
+               <li>
+                <Link to="/profile" className="hover:text-green-400 flex items-center gap-2">
+     <UserCircle className="w-5 h-5" />
+     <span className=" sm:inline">Profile</span>
+   </Link>
+               </li>
+               <li>
+                <Link to="/logout" className="hover:text-green-400 flex items-center gap-2">
+     <LogOut  className="w-5 h-5" />
+     <span className=" sm:inline">logout</span>
+   </Link>
+               </li>
+               </>
             ) : (
               <>
                 <li>
