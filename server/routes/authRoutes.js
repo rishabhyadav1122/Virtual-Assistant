@@ -36,7 +36,7 @@ router.get(
       // Generate JWT token here
       const token = generateJWT(req.user); // Implement JWT generation logic
 
-      res.redirect(`http://localhost:5173/login?auth_token=${token}`);
+      res.redirect(`https://virtual-assistant-o3hq.vercel.app/login?auth_token=${token}`);
       // res.setHeader('Content-Type', 'text/html')
       // res.send(`
       //   <!DOCTYPE html>
@@ -53,10 +53,10 @@ router.get(
     }
   );
 // Logout
-router.get("/logout", (req, res) => {
-    req.logout(() => {
-      res.redirect("http://localhost:5173/");
-    });
-  });  
+// router.get("/logout", (req, res) => {
+//     req.logout(() => {
+//       res.redirect("http://localhost:5173/");
+//     });
+//   });  
 
 module.exports = router
